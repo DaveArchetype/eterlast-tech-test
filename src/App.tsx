@@ -9,7 +9,7 @@ import { Mint } from "./components/Mint";
 import { NFT } from "./components/NTF";
 let provider = new ethers.providers.Web3Provider(window.ethereum);
 
-interface NFT {
+interface NFTType {
   name: string;
   image_url: string;
   description: string;
@@ -44,7 +44,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         var date = new Date().toJSON().slice(0, 10).replace(/-/g, "/");
-        data.payload.forEach((nft: NFT): void => {
+        data.payload.forEach((nft: NFTType): void => {
           dispatch(
             add({
               asset_id: uuid(),
