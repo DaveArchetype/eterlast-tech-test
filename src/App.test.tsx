@@ -1,18 +1,14 @@
 import { render } from "@testing-library/react";
 import { Mint } from "./components/Mint";
 import { NFT } from "./components/NTF";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 
 test("renders the Mint with the correct placeholder for the input", () => {
   const { getByPlaceholderText } = render(
-    <Mint
-      collection=""
-      setCollection={() => {
-        console.log("test");
-      }}
-      handleRequest={() => {
-        console.log("test");
-      }}
-    />
+    <Provider store={store}>
+      <Mint />
+    </Provider>
   );
 
   expect(getByPlaceholderText(/Collection Name/i)).toBeInTheDocument();
