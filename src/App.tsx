@@ -40,7 +40,7 @@ function App() {
   }, [nfts]);
 
   const handleRequest = async () => {
-    fetch("https://testingstar.free.beeceptor.com")
+    fetch("https://teststars.free.beeceptor.com")
       .then((res) => res.json())
       .then((data) => {
         var date = new Date().toJSON().slice(0, 10).replace(/-/g, "/");

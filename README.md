@@ -15,3 +15,11 @@ These 2 would require me to create 2 React components which would be displayed. 
 I then thought that I must create the Redux Toolkit methods to set the state for the wallet and assets.
 I did not wish to always set the wallet ID and the network for each run of the minting process hence I decided to create 2 different actions.
 One to set the metadata of the wallet and network, which would only be ran when the app would be initialized, and one to be adding the new batches to the assets array every time the user would click the Mint button.
+
+I have also realized I have to define a few of the assets in mock data, but I have decided to use the mock API as mentioned in the requests, so I went to beeceptor and designed a basic response for the GET action, it will reply with 3 assets and their name, description and image.
+I have done 3 different APIs as I have noticed they have a limit of 50 calls each.
+The API endpoints are:
+https://teststars.free.beeceptor.com
+https://testingstar.free.beeceptor.com
+https://testeroo.free.beeceptor.com
+The link would be found in the App.tsx file where it can be swapped for the others API endpoints if needed, in case the API is ran more than 50 times.
