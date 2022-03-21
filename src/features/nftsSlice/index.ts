@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+// the interface for the object passed in the add method
 interface NFT {
   asset_id: string;
   name: string;
@@ -11,17 +12,21 @@ interface NFT {
   royalties: number;
   date_of_creation: string;
 }
+
+//the interface for the NFT state containing the creator wallet id, network and the assets in the form of an array of NFT objects
 interface NFTState {
   creator_wallet_id: string;
   creator_network: string;
   assets: NFT[];
 }
 
+// the interface for the object passed in the setMetadata method
 interface Metadata {
   creator_wallet_id: any;
   creator_network: any;
 }
 
+// the initial state
 const initialState: NFTState = {
   creator_wallet_id: "",
   creator_network: "",

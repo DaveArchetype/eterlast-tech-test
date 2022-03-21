@@ -7,8 +7,11 @@ import { RootState } from "./app/store";
 import "./App.css";
 import { Mint } from "./components/Mint";
 import { NFT } from "./components/NTF";
+
+// getting the provider to be able to work with the MetaMask wallet
 let provider = new ethers.providers.Web3Provider(window.ethereum);
 
+// the interface for the NFT to be minted
 interface NFTType {
   name: string;
   image_url: string;
@@ -21,6 +24,7 @@ function App() {
   const [collection, setCollection] = useState("");
   const nfts = useSelector((state: RootState) => state.nfts);
 
+  // this useEffect has the purpose to initialize the nfts state in the store with the details of the network and wallet
   useEffect(() => {
     async function initializingMetadata() {
       let account = await provider.send("eth_requestAccounts", []);
@@ -35,10 +39,12 @@ function App() {
     initializingMetadata();
   }, []);
 
+  // this useEffect will log the ntfs in the console every time the state changes to see all changes
   useEffect(() => {
     console.log(nfts);
   }, [nfts]);
 
+  // the handleRequest is used when clicking the Mint button, to mint a batch of NFT`s gathered from an API, in this case a mock API
   const handleRequest = async () => {
     fetch("https://teststars.free.beeceptor.com")
       .then((res) => res.json())

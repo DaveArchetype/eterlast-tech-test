@@ -1,6 +1,7 @@
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 import nftsReducer from "../features/nftsSlice";
 
+// this is the store for the Redux Toolkit, binding the nfts you get with the their reducer
 export const store = configureStore({
   reducer: {
     nfts: nftsReducer,
