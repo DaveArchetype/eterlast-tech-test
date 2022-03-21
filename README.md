@@ -23,3 +23,12 @@ https://teststars.free.beeceptor.com
 https://testingstar.free.beeceptor.com
 https://testeroo.free.beeceptor.com
 The link would be found in the App.tsx file where it can be swapped for the others API endpoints if needed, in case the API is ran more than 50 times.
+
+I have added 2 tests to check the rendering of the Mint and NFT components.
+
+The app can be run by typing the following commands:
+npm i
+npm run start
+
+The tests can be run by typing the following command:
+npm run test
