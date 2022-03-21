@@ -36,7 +36,7 @@ export const nftsSlice = createSlice({
       state.assets.push(action.payload);
     },
     setMetadata: (state, action: PayloadAction<Metadata>) => {
-      state.creator_wallet_id = action.payload.creator_wallet_id;
+      state.creator_wallet_id = action.payload.creator_wallet_id[0];
       state.creator_network = action.payload.creator_network.name;
     },
   },
