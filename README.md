@@ -8,7 +8,7 @@ For this I chose to start the test by using the Redux TypeScript template as it 
 I shall add comments for each section of the app as soon as I get to finish writing the app, in order to keep a clean self-documenting code.
 
 I imagined this as a very simple app, that would only have a collection input box and a Mint button.
-The collection input box would be for having a name for the collections of the NTF batches, and it would be optional.
+The collection input box would be for having a name for the collections of the NFT batches, and it would be optional.
 I then wanted to also display some basic information from the NFT`s and I've decided that the name, collection name, description, assetID and picture would be a good choice. I will display them in a single column on multiple rows.
 These 2 would require me to create 2 React components which would be displayed. One for the input box and the Mint button, one for displaying a single NFT.
 
