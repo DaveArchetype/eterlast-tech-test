@@ -5,6 +5,8 @@ import { v4 as uuid } from "uuid";
 import { useEffect, useState } from "react";
 import { RootState } from "./app/store";
 import "./App.css";
+import { Mint } from "./components/Mint";
+import { NFT } from "./components/NTF";
 let provider = new ethers.providers.Web3Provider(window.ethereum);
 
 interface NFT {
@@ -64,34 +66,14 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <input
-          className="collectionInput"
-          placeholder="Collection name"
-          value={collection}
-          onChange={(e) => {
-            setCollection(e.target.value);
-          }}
-        />
-        <button className="mintButton" onClick={() => handleRequest()}>
-          Mint
-        </button>
-      </div>
+      <Mint
+        collection={collection}
+        setCollection={setCollection}
+        handleRequest={handleRequest}
+      />
 
       {nfts.assets.map((nft, i) => {
-        return (
-          <div key={i}>
-            <h4>NTF Name: {nft.name}</h4>
-            <p>Collection: {nft.collection}</p>
-            <p>Description: {nft.description}</p>
-            <p>Asset ID: {nft.asset_id}</p>
-            <img
-              src={nft.picture}
-              style={{ width: 400 }}
-              alt={nft.description}
-            />
-          </div>
-        );
+        return <NFT i={i} nft={nft} key={i} />;
       })}
     </div>
   );
