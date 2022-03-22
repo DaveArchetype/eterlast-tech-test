@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { RootState } from "./app/store";
 import "./App.css";
 import { Mint } from "./components/Mint";
-import { NFT } from "./components/NTF";
+import { NFT } from "./components/NFT";
 
 // getting the provider to be able to work with the MetaMask wallet
 let provider = new ethers.providers.Web3Provider(window.ethereum);

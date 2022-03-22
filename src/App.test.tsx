@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { Mint } from "./components/Mint";
-import { NFT } from "./components/NTF";
+import { NFT } from "./components/NFT";
 import { Provider } from "react-redux";
 import { store } from "./app/store";
 
